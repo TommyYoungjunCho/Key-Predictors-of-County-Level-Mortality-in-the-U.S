@@ -1,0 +1,102 @@
+---
+title: "Research plan: Analysing the Determinants of Health Outcomes"
+author: "490455715"
+output: 
+  pdf_document:
+    latex_engine: xelatex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction 
+
+In the United States, disparities in health outcomes across different regions have emerged as a profound issue despite the significant investments in healthcare. This study aims to investigate what variables lead to deviations in health outcomes at the county level, focusing on the role of various factors. This study hypotheses that environmental and elective factors interact to influence health outcomes. The presence and quantity of these factors can lead to subtle differences, which become key determinants of the mortality rates and health outcomes in each county. This theory is supported by research that demonstrates the significance of social determinants of health and the influence of lifestyle decisions on general well-being. The study will evaluate the idea through statistical analysis, providing information about the factors that most strongly predict health outcomes at the county level.
+
+# Literature and theory
+
+Health outcomes are the result of a combination of various determinants interacting with each other, which plays a critical role in shaping wellbeing of populations (Braveman & Gottlieb, 2014).
+
+### 1. Physical Environment  
+
+Environmental and infrastructural factors essential for living are significant predictors of health outcomes. Poor air and water quality are directly linked to respiratory diseases and waterborne illnesses (Frumkin, 2005). Similarly, overcrowded living conditions and limited access to efficient public transportation systems can exacerbate health inequalities (Syed et al., 2019).
+
+### 2. Social / Economic Environment
+
+Chelak & Chakole(2023) underscores the profound impact of socioeconomic status, education, and social support on health outcomes, emphasising that inequalities in these areas can lead to significant disparities in health. Lower socioeconomic status is associated with higher rates of disease and
+mortality due to factors such as stress, limited access to healthcare, and living conditions (Adler & Newman, 2002).
+
+### 3. Clinical Care  
+
+Access to high-quality healthcare services is a critical determinant of health outcomes. Not only the direct accessibility to healthcare services, such as insurance coverage or the number of hospitals and medical staff, but also the quality of healthcare services, including ongoing monitoring and the number of hospital stays, significantly impacts health (Access to Hospitals, n.d.). Counties with a higher number of primary care providers per capita tend to have better health outcomes (STARFIELD et al., 2005).
+
+### 4. Health Behaviours  
+
+The impact of lifestyle choices, such as diet, physical activity, smoking, and alcohol consumption on health outcomes, is well-known (Ng et al., 2019). Mokdad (2004) identifies tobacco use, poor diet, and physical inactivity as leading causes of death, suggesting that lifestyle interventions can significantly improve health outcomes.
+
+### 5. Additional Measures  
+
+Other factors that are not included in the four elements above such as 'Diabetes prevalence' and 'Insufficient sleep' also contribute to health outcomes (Grandner et al., 2016).
+
+
+# Data and methodology 
+
+### Datasets
+
+In addition to the dataset provided, an additional dataset "Average Household Size and Population Density - County" which includes the "Area of Land" variable. This variable will be merged with count variables from our existing dataset (e.g., the number of healthcare workers per county), enabling to calculate counts per unit area.
+
+This approach enables a more precise understanding by evaluating not just the absolute numbers but the density of these counts per square metre. This will lead to a deeper insight into the distribution and availability of resources and services across counties, taking into account the geographical size of each county.
+
+### Variables
+
+A dependent variable is the premature age-adjusted mortality rate. This will be calculated by dividing the population by the premature age-adjusted mortality figures to construct a mortality rate.
+As for independent variables, our analysis will incorporate five key elements (Physical Environment, Social / Economic Environment, Clinical Care, Health Behaviours, Additional Measure).
+
+### Models
+
+Before modelling, independent variables will be normalised and 5-fold cross validation will take place. For models, Linear and Logistic Regression models are utilised, both of which are tailored to accommodate the complexities of our dataset and the nature of our dependent variable, the mortality rate.
+
+Lasso penalty will be applied to both regression models, serving as a tool for feature selection by identifying key predictors from variables like air and water quality, housing, and transit systems. The rationale for using it is its ability to drive the coefficients of less important variables towards zero, thereby facilitating feature selection and assisting understanding their impact on health outcomes.
+
+Linear Regression will analyse mortality as a continuous variable, while Logistic Regression will divide it into High and Low categories based on the median rate, facilitating binary classification. After modelling, correlations and causal links will be found to understand what drives mortality rate differences.
+
+
+# Expectations and limitations
+
+### Expectations
+
+This study aims to uncover the impact of multidimensional factors on health outcomes. It is expected to provide crucial insights into complex causes behind disparities and contribute to understanding the reasons.
+This study will also provide empirical evidence necessary for public health policies and interventions. It will contribute to developing effective strategies aimed at reducing health disparities across the United States and promoting health equity. Furthermore, it can serve as valuable material for improving health in diverse community settings.
+
+### Limitation
+
+In the provided dataset, the years of measurement differ for each element. Without clear justification for these measurements, it can be inaccurate in ensuring accuracy in the impact and outcomes of factors.
+
+
+# Bibliography 
+
+### Datasets
+1. Provided Dataset: 2018 County Health Rankings Data - v2.xls
+2. Additional Dataset : https://covid19.census.gov/datasets/21843f238cbb46b08615fc53e19e0daf/explore
+
+### References
+ 
+Access to hospitals. (n.d.). Australian Institute of Health and Welfare. https://www.aihw.gov.au/reports-data/myhospitals/themes/hospital-access
+Adler, N. E., & Newman, K. (2002). Socioeconomic Disparities In Health: Pathways And Policies. Health Affairs, 21(2), 60–76. https://doi.org/10.1377/hlthaff.21.2.60
+
+Braveman, P., & Gottlieb, L. (2014). The Social Determinants of Health: It’s Time to Consider the Causes of the Causes. Public Health Reports, 129(2), 19–31. https://doi.org/10.1177/00333549141291s206
+
+Chelak, K., & Chakole, S. (2023). The Role of Social Determinants of Health in Promoting Health Equality: A Narrative Review. Cureus, 15(1). https://doi.org/10.7759/cureus.33425
+
+Frumkin, H. (2005). Guest Editorial: Health, Equity, and the Built Environment. Environmental Health Perspectives, 113(5), A290–A291. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1257564/
+
+Grandner, M. A., Seixas, A., Shetty, S., & Shenoy, S. (2016). Sleep Duration and Diabetes Risk: Population Trends and Potential Mechanisms. Current Diabetes Reports, 16(11). https://doi.org/10.1007/s11892-016-0805-8
+
+Mokdad, A. H. (2004). Actual Causes of Death in the United States, 2000. JAMA, 291(10), 1238. https://doi.org/10.1001/jama.291.10.1238
+
+Ng, R., Sutradhar, R., Yao, Z., Wodchis, W. P., & Rosella, L. C. (2019). Smoking, drinking, diet and physical activity—modifiable lifestyle risk factors and their associations with age to first chronic disease. International Journal of Epidemiology, 49(1). https://doi.org/10.1093/ije/dyz078
+
+STARFIELD, B., SHI, L., & MACINKO, J. (2005). Contribution of Primary Care to Health Systems and Health. The Milbank Quarterly, 83(3), 457–502. https://doi.org/10.1111/j.1468-0009.2005.00409.x
+
+Syed, S. T., Gerber, B. S., & Sharp, L. K. (2019). Traveling Towards Disease: Transportation Barriers to Health Care Access. Journal of Community Health, 38(5), 976–993. https://doi.org/10.1007/s10900-013-9681-1
