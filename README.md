@@ -73,3 +73,6 @@ This research investigates the variables that lead to deviations in health outco
     - **Improvement of Socioeconomic Environment**: Economic support, job creation programs, and expansion of educational opportunities.
     - **Integrated Public Health Policies**: Develop policies that consider both health behaviors and socioeconomic environments.
     - **Region-Specific Approaches**: Tailor policies to the characteristics of each region to address specific causes of mortality.
+
+## Notion Portfolio Page
+- [[Notion Portfolio Page Link](https://magic-taleggio-e52.notion.site/Portfolio-705d90d52e4e451488fb20e3d6653d3b)](#) 
